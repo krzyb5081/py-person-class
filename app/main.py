@@ -13,9 +13,11 @@ def create_person_list(people: list[dict]) -> list:
         if person.get("wife", None) is None and person.get("husband", None) is None:
             continue
         elif person.get("husband", None) is not None:
-            Person.people[person["name"]].husband = Person.people[person["husband"]]
+            husband = Person.people[person["husband"]]
+            Person.people[person["name"]].husband = husband
         elif person.get("wife", None) is not None:
-            Person.people[person["name"]].wife = Person.people[person["wife"]]
+            wife = Person.people[person["wife"]]
+            Person.people[person["name"]].wife = wife
     person_list = []
     for person in Person.people.values():
         person_list.append(person)
