@@ -23,6 +23,6 @@ def create_person_list(people: list[dict]) -> list:
             wife = Person.people[person["wife"]]
             Person.people[person["name"]].wife = wife
     person_list = []
-    for key, person in people.items():
-        person_list.append(Person.people[key])
+    for person in people:
+        person_list.append(Person.people[people["name"])
     return person_list
